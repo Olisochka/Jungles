@@ -8,6 +8,12 @@ public class _Main {
         Lion lion = new Lion();
         EventProducer eventProducer = new EventProducer();
         eventProducer.acctivateEvent(lion);
+        int x = 0;
+        while (x < 10000) {
+            System.out.println(x);
+            Thread.sleep(1000);
+            x = x + 1;
+        }
     }
 
 }
