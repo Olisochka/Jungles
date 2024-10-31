@@ -4,6 +4,7 @@ import by.alisa.jungle.model.Lion;
 
 public class EventProducer {
     CheckEnergy checkEnergy = new CheckEnergy();
+    CheckHealth checkHealth = new CheckHealth();
     public void acctivateEvent(Lion lion) {
         while (checkStatus(lion)) {
             int eventNumber = (int) (Math.random() * 100);
@@ -31,23 +32,10 @@ public class EventProducer {
         }
     }
 
-
-    public int checkHealth(Lion lion) {
-        int health = lion.getHealth();
-        if (health > 100) {
-            health = 100;
-            return health;
-        } else if (health < 0) {
-            health = 0;
-            System.out.println("Лев умер.");
-        }
-        return health;
-    }
-
     private void sleepEvent(Lion lion) {
         int energy = lion.getEnergy();
         energy = energy + 20;
-        checkEnergy.checkEnergy(Lion lion);
+        checkEnergy.checkEnergy(lion);
         lion.setEnergy(energy);
         System.out.println("Лев поспал  + 20 энергии. Текущая энергия: " + lion.getEnergy());
     }
@@ -59,7 +47,7 @@ public class EventProducer {
         checkEnergy.checkEnergy(lion);
         lion.setHealth(energy);
         health = health + 7;
-        checkHealth(health);
+        checkHealth.checkHealth(lion);
         lion.setHealth(health);
         System.out.println("Лев поиграл  - 5 энергии + 7 здоровья. Текущая энергия: " + lion.getEnergy() + " Текущее здоровье: " + lion.getHealth());
     }
@@ -70,7 +58,7 @@ public class EventProducer {
         energy = energy - 7;
         checkEnergy.checkEnergy(lion);
         health = health + (int) (lion.Fangs * 5);
-        checkHealth(health);
+        checkHealth.checkHealth(lion);
         lion.setEnergy(energy);
         lion.setHealth(health);
         System.out.println("Лев съел зебру - 7 энергии + " + health + "здоровья. Текущая энергия: " + lion.getEnergy() + "Текущее здоровье: " + lion.getHealth());
@@ -82,7 +70,7 @@ public class EventProducer {
         energy = energy - 10;
         checkEnergy.checkEnergy(lion);
         health = health + (int) (lion.Fangs * 8);
-        checkHealth(health);
+        checkHealth.checkHealth(lion);
         lion.setEnergy(energy);
         lion.setHealth(health);
         System.out.println("Лев съел носорога - 14 энергии + " + health + "здоровья. Текущая энергия: " + lion.getEnergy() + "Текущее здоровье: " + lion.getHealth());
@@ -94,7 +82,7 @@ public class EventProducer {
         energy = energy - 15;
         checkEnergy.checkEnergy(lion);
         health = health - 15;
-        checkHealth(health);
+        checkHealth.checkHealth(lion);
         lion.setEnergy(energy);
         lion.setHealth(health);
         System.out.println("На Льва напал охотник - 7 энергии - 15 здоровья. Текущая энергия: " + lion.getEnergy() + "Текущее здоровье: " + lion.getHealth());
@@ -106,7 +94,7 @@ public class EventProducer {
         energy = energy - 7;
         checkEnergy.checkEnergy(lion);
         health = health - 7;
-        checkHealth(health);
+        checkHealth.checkHealth(lion);
         lion.setEnergy(energy);
         lion.setHealth(health);
         System.out.println("Лев подрался- 7 энергии - 7 здоровья. Текущая энергия: " + lion.getEnergy() + "Текущее здоровье: " + lion.getHealth());
@@ -118,7 +106,7 @@ public class EventProducer {
         energy = energy - 2;
         checkEnergy.checkEnergy(lion);
         health = health + (int) (lion.Fangs * 4);
-        checkHealth(health);
+        checkHealth.checkHealth(lion);
         lion.setEnergy(energy);
         lion.setHealth(health);
         System.out.println("Лев попил воды - 2 энергии + " + health + "здоровья. Текущая энергия: " + lion.getEnergy() + "Текущее здоровье: " + lion.getHealth());
@@ -130,7 +118,7 @@ public class EventProducer {
         energy = energy - 3;
         checkEnergy.checkEnergy(lion);
         health = health + (int) (lion.Fangs * 2);
-        checkHealth(health);
+        checkHealth.checkHealth(lion);
         lion.setEnergy(energy);
         lion.setHealth(health);
         System.out.println("Лев поплавал - 3 энергии + " + health + "здоровья. Текущая энергия: " + lion.getEnergy() + "Текущее здоровье: " + lion.getHealth());
@@ -151,7 +139,7 @@ public class EventProducer {
         energy = energy - 2;
         checkEnergy.checkEnergy(lion);
         health = health - 2;
-        checkHealth(health);
+        checkHealth.checkHealth(lion);
         lion.setEnergy(energy);
         lion.setHealth(health);
         System.out.println("Лев посмотрел на пустыню - 2 энергии - 2 здоровья. Текущая энергия: " + lion.getEnergy() + "Текущее здоровье: " + lion.getHealth());
