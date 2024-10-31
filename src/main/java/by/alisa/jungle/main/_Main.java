@@ -4,9 +4,10 @@ import by.alisa.jungle.model.Lion;
 import by.alisa.jungle.util.EventProducer;
 
 public class _Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Lion lion = new Lion();
         EventProducer eventProducer = new EventProducer();
         eventProducer.acctivateEvent(lion);
     }
+
 }

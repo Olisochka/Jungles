@@ -3,14 +3,14 @@ package by.alisa.jungle.model;
 public class Lion {
     private int health = 100;
     private int energy = 100;
-    private double fangs = 1.5;
+    public double Fangs = 1.5;
 
     public void setHealth(int health) {
         this.health = health;
     }
 
     public int getHealth() {
-        return this.health;
+        return health;
     }
 
     public void setEnergy(int energy) {
@@ -18,10 +18,6 @@ public class Lion {
     }
 
     public int getEnergy() {
-        return this.energy;
-    }
-
-    public double getFangs() {
-        return this.fangs;
+        return energy;
     }
 }
